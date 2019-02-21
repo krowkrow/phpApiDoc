@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tt » 翼动无疆wiki</title>
+	<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- 头部 -->
+		<header class="navbar navbar-default">
+			<div class="navbar-header"><a href="/" class="navbar-brand" title="wiki">翼动无疆wiki</a></div>
+			<div class="navbar-text">wiki</div>
+		</header>
+		<!-- 内容区 -->
+		<div class="target-fix"></div>
+		<div class="content">
+			<h1 id="title">车贷在线</h1>
+			<p>作者：庞凯，2018-03-09</p>
+			<p class="desc">车贷在线APP的api部分</p>
+			<p>版本： v1.0</p>
+			<p>测试地址： http://192.168.1.188:8021</p>
+			<p>输入格式： application/x-www-form-urlencoded</p>
+			<p>输出格式： application/json</p>
+
+			<h2 id="title-0" class="staff hover_bg_f5">员工<span class="arrow" id="arrow1"></span></h2>
+			<div id="staff_msg">
+
+        <h3 id="post-employee_login" class="login hover_bg_f5">POST - 登录 - /employee/login</h3>
+			<div id="login_post">
+			<p><strong>/employee/login</strong>  -- 庞凯</p>
+			<p class="desc">员工登录</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>phone</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>电话号码</td>
+					</tr>
+            <tr  class="trb">
+						<td>password</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>密码</td>
+					</tr>
+            <tr >
+						<td>code</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data":{
+        "employee_id": "2",  //员工id
+        "employee_name": "钟有文 ",  //员工们
+        "struc_id": "2",   //自身绑定门店id
+        "struc_name": "2",   //门店名
+        "login_key": "ded0833f635131da395724f66a891042",   //token令牌
+        "position_id": "2",   //岗位id
+        "position_name": "部长",   //岗位名称
+        "phone": "13350093791",   //电话
+        "is_freezed": "0",   //是否冻结，1-冻结， 0-正常
+        "address": "这是店铺地址，收货地址",   //店铺地址，收货地址
+        "perm": {
+            {
+                "perm_id": "1",   //权限id
+                "function_code": "struc",
+                "path_info": "struc/newrec/"   //权限路径
+            },
+            {
+                "perm_id": "2",
+                "function_code": "struc",
+                "path_info": "struc/search/"
+            },
+            {
+                "perm_id": "3",
+                "function_code": "struc",
+                "path_info": "struc/modifyrec/"
+            }
+        }
+    }
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data":{
+        "employee_id": "2",
+        "employee_name": "钟有文 ",
+        "struc_id": "2",
+        "struc_name": "2",
+        "login_key": "ded0833f635131da395724f66a891042",
+        "position_id": "2",
+        "position_name": "部长",
+        "phone": "13350093791",
+        "is_freezed": "0",
+        "address": "这是店铺地址，收货地址",
+        "perm": {
+            {
+                "perm_id": "1",
+                "function_code": "struc",
+                "path_info": "struc/newrec/"
+            },
+            {
+                "perm_id": "2",
+                "function_code": "struc",
+                "path_info": "struc/search/"
+            },
+            {
+                "perm_id": "3",
+                "function_code": "struc",
+                "path_info": "struc/modifyrec/"
+            }
+        }
+    }
+}
+</pre>
+
+            </div>
+
+        <h3 id="post-employee_logout" class="login hover_bg_f5">POST - 登出 - /employee/logout</h3>
+			<div id="login_post">
+			<p><strong>/employee/logout</strong> </p>
+			<p class="desc">注销登录</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>employee_id</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>员工ID</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+
+            </div>
+
+        <h3 id="post-employee_freze" class="login hover_bg_f5">POST - 冻结员工 - /employee/freze</h3>
+			<div id="login_post">
+			<p><strong>/employee/freze</strong> </p>
+			<p class="desc">冻结员工</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>employee_id</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+
+            </div>
+
+        <h3 id="post-employee_delrec" class="login hover_bg_f5">GET - 删除员工 - /employee/delrec</h3>
+			<div id="login_post">
+			<p><strong>/employee/delrec</strong> </p>
+			<p class="desc">删除员工</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>employee_id</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>员工ID</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+
+            </div>
+
+			</div>
+
+			<h2 id="title-1" class="staff hover_bg_f5">esp<span class="arrow" id="arrow1"></span></h2>
+			<div id="staff_msg">
+
+        <h3 id="post-employee_login2" class="login hover_bg_f5">GET - 登录 - /employee/login2</h3>
+			<div id="login_post">
+			<p><strong>/employee/login2</strong> </p>
+			<p class="desc">登录</p>
+			<p><strong>输入参数</strong></p><p class="desc">无</p>
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data":{
+        "employee_id": "2",  //员工id
+        "employee_name": "钟有文 ",  //员工们
+        "struc_id": "2",   //自身绑定门店id
+        "struc_name": "2",   //门店名
+        "login_key": "ded0833f635131da395724f66a891042",   //token令牌
+        "position_id": "2",   //岗位id
+        "position_name": "部长",   //岗位名称
+        "phone": "13350093791",   //电话
+        "is_freezed": "0",   //是否冻结，1-冻结， 0-正常
+        "address": "这是店铺地址，收货地址",   //店铺地址，收货地址
+        "perm": [
+            {
+                "perm_id": "1",   //权限id
+                "function_code": "struc",
+                "path_info": "struc/newrec/"   //权限路径
+            },
+            {
+                "perm_id": "2",
+                "function_code": "struc",
+                "path_info": "http://struc/search/"
+            },
+            {
+                "perm_id": "3",
+                "function_code": "struc",
+                "path_info": "struc/modifyrec/"
+            }
+        ]
+    }
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data":{
+        "employee_id": "2",
+        "employee_name": "钟有文 ",
+        "struc_id": "2",
+        "struc_name": "2",
+        "login_key": "ded0833f635131da395724f66a891042",
+        "position_id": "2",
+        "position_name": "部长",
+        "phone": "13350093791",
+        "is_freezed": "0",
+        "address": "这是店铺地址，收货地址",
+        "perm": [
+            {
+                "perm_id": "1",
+                "function_code": "struc",
+                "path_info": "struc/newrec/"
+            },
+            {
+                "perm_id": "2",
+                "function_code": "struc",
+                "path_info": "http://struc/search/"
+            },
+            {
+                "perm_id": "3",
+                "function_code": "struc",
+                "path_info": "struc/modifyrec/"
+            }
+        ]
+    }
+}
+</pre>
+
+            </div>
+
+        <h3 id="post-employee_sss" class="login hover_bg_f5">GET - 登录 - /employee/sss</h3>
+			<div id="login_post">
+			<p><strong>/employee/sss</strong> </p>
+			<p class="desc">登录</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>id</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>测似乎</td>
+					</tr>
+            <tr  class="trb">
+						<td>type</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>类型</td>
+					</tr>
+            <tr >
+						<td>ext</td>
+						<td>string</td>
+						<td>否</td>
+						<td></td>
+						<td>附加参数和其他，或者是水电费</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功"
+}
+</pre>
+
+            </div>
+
+			</div>
+
+			<h2 id="title-2" class="staff hover_bg_f5">permgroup<span class="arrow" id="arrow1"></span></h2>
+			<div id="staff_msg">
+
+        <h3 id="post-permgroup_newrec" class="login hover_bg_f5">POST - 新增权限组 - /permgroup/newrec</h3>
+			<div id="login_post">
+			<p><strong>/permgroup/newrec</strong> </p>
+			<p class="desc">注销登录</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>group_name</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限组名称，限长255字符</td>
+					</tr>
+            <tr  class="trb">
+						<td>perm</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限ID，多个英文逗号分隔</td>
+					</tr>
+            <tr >
+						<td>notes</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限组备注，限长255字符</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+
+            </div>
+
+        <h3 id="post-permgroup_modifyrec" class="login hover_bg_f5">POST - 修改权限组 - /permgroup/modifyrec</h3>
+			<div id="login_post">
+			<p><strong>/permgroup/modifyrec</strong> </p>
+			<p class="desc">修改一条权限组记录</p>
+			<p><strong>输入参数</strong></p>
+			<table class="parameter-table">
+				<thead>
+					<tr>
+						<th>参数</th>
+						<th>类型</th>
+						<th>必须</th>
+						<th>默认值</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr >
+						<td>perm_group_id</td>
+						<td>int</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限组id</td>
+					</tr>
+            <tr  class="trb">
+						<td>group_name</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限组名称，限长255字符</td>
+					</tr>
+            <tr >
+						<td>perm</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限ID，多个英文逗号分隔</td>
+					</tr>
+            <tr  class="trb">
+						<td>notes</td>
+						<td>string</td>
+						<td><font color="red">是</font></td>
+						<td></td>
+						<td>权限组备注，限长255字符</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p><strong>返回</strong></p>
+			<pre class="language-markup">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+            <p class="appJson">纯净json</p>
+            <pre class="language-markup" style="display:none">
+{
+    "code":"0",
+    "msg":"成功",
+    "data": "登出成功"
+}
+</pre>
+
+            </div>
+
+			</div>
+
+			<div id="box1"></div>
+		</div>
+		<!-- 目录 -->
+		<div class="content_box">
+					<ul>
+        				<li>
+        				    <a id="title-0">员工</a>
+        					<ul>
+						      <li><a id="post-employee_login">登录-POST</a></li>
+						      <li><a id="post-employee_logout">登出-POST</a></li>
+						      <li><a id="post-employee_freze">冻结员工-POST</a></li>
+						      <li><a id="post-employee_delrec">删除员工-GET</a></li>
+                			</ul>
+                		</li>
+        				<li>
+        				    <a id="title-1">esp</a>
+        					<ul>
+						      <li><a id="post-employee_login2">登录-GET</a></li>
+						      <li><a id="post-employee_sss">登录-GET</a></li>
+                			</ul>
+                		</li>
+        				<li>
+        				    <a id="title-2">permgroup</a>
+        					<ul>
+						      <li><a id="post-permgroup_newrec">新增权限组-POST</a></li>
+						      <li><a id="post-permgroup_modifyrec">修改权限组-POST</a></li>
+                			</ul>
+                		</li>
+					</ul>
+		</div>
+
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

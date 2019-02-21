@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翼动无疆wiki</title>
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+	<div class="wrapper" id="app">
+		<!-- 头部 -->
+		<header class="navbar navbar-default">
+			<div class="navbar-header"><a href="/" class="navbar-brand" title="wiki">翼动无疆wiki</a></div>
+			<div class="navbar-text">wiki</div>
+			<i class="expandall fa fa-plus-square" title="展开全部"></i>
+			<i class="shrinkall fa fa-minus-square" title="折叠全部"></i>
+		</header>
+		<!-- 内容区 -->
+		<div class="content">
+			<h1 id="title">茶树菇对外平台的后台API</h1>
+			<p>作者：郭洪键、秦三、杨李、庞凯，2018-04-25</p>
+			<p class="desc">平台的后台管理的api部分</p>
+			<p>版本： v1.0</p>
+			<p>测试地址： 开发地址：http://192.168.1.101:83/  线上地址http://platmanageapi.chedaiol.com/v1/</p>
+			<p>输入格式： application/x-www-form-urlencoded</p>
+			<p>输出格式： application/json</p>
+			<p>生成时间： 2018-07-25 14:51:48</p>
+			<!-- 接口内容 -->
+			<h2 id="title-0" class="staff hover_bg_f5">基础接口<span class="arrow" id="arrow1"></span></h2>
+			<div id="staff_msg">
+				<!-- 接口列表 -->
+				<h3 id="post-manager_login" class="login hover_bg_f5 active">POST - 登录 - manager/login</h3>
+				<div id="login_post">
+					<p>
+						<strong id="link_manager_login">manager/login</strong>
+						<button class="link_manager_login fa fa-copy"> 复制链接</button>
+					</p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<table class="parameter-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>类型</th>
+								<th>必须</th>
+								<th>默认值</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>username</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>用户名</td>
+							</tr>
+							<tr  class="trb">
+								<td>password</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>密码</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "登录成功",
+	"info": {
+		"operator_id": "1",
+		"username": "admin",
+		"login_key": "e9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fce9e8311807ca7092d839abc51bfac8fc",
+		"operator_name": "李博",
+		"operator_title": "管理员",
+		"phone": "18782903688",
+		"is_freezed": "0",
+		"role_id": "1",
+		"permission": [
+			{
+				"permission_id": "1",
+				"function_code": "permissiongroup",
+				"function_name": "权限管理",
+				"permission_name": "查询",
+				"path_info": "/permissiongroup/search/"
+			}
+		]
+	}
+}</pre>
+					<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy"> 复制纯净JSON</button></p>
+					<pre class="language-markup" id="puremanager_login">
+{
+	"code": "0",
+	"msg": "登录成功",
+	"info": {
+		"operator_id": "1",
+		"username": "admin",
+		"login_key": "e9e8311807ca7092d839abc51bfac8fc",
+		"operator_name": "李博",
+		"operator_title": "管理员",
+		"phone": "18782903688",
+		"is_freezed": "0",
+		"role_id": "1",
+		"permission": [
+			{
+				"permission_id": "1",
+				"function_code": "permissiongroup",
+				"function_name": "权限管理",
+				"permission_name": "查询",
+				"path_info": "/permissiongroup/search/"
+			}
+		]
+	}
+}</pre>
+				</div>
+				<h3 id="post-manager_logout" class="login hover_bg_f5 active">POST - 登出 - manager/logout</h3>
+				<div id="login_post">
+					<p>
+						<strong id="link_manager_logout">manager/logout</strong>
+						<button class="link_manager_logout  fa fa-copy">复制连接</button>
+					</p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "登录成功",
+}</pre>
+            		<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy">复制纯净JSON</button></p>
+					<pre class="language-markup" id="puremanager_logout">
+{
+	"code": "0",
+	"msg": "登录成功",
+}</pre>
+				</div>
+        		<h3 id="post-manager_editpwd" class="login hover_bg_f5 active">POST - 员工修改密码 - manager/editpwd</h3>
+				<div id="login_post">
+					<p>
+						<strong id="link_manager_editpwd">manager/editpwd</strong>
+						<button class="link_manager_editpwd">复制连接</button>
+					</p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<table class="parameter-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>类型</th>
+								<th>必须</th>
+								<th>默认值</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr >
+								<td>pwd_old</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>旧密码</td>
+							</tr>
+							<tr  class="trb">
+								<td>pwd_new</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>新密码</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "成功",
+}</pre>
+					<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy">复制纯净JSON</button></p>
+					<pre class="language-markup" id="puremanager_editpwd">
+{
+	"code": "0",
+	"msg": "成功",
+}</pre>
+				</div>
+			</div>
+			<h2 id="title-1" class="staff hover_bg_f5">系统参数<span class="arrow" id="arrow1"></span></h2>
+			<div id="staff_msg">
+        		<h3 id="post-permissiongroup_systemsearch" class="login hover_bg_f5 active">POST - 系统参数列表 - permissiongroup/systemsearch</h3>
+				<div id="login_post">
+					<p>
+						<strong id="link_permissiongroup_systemsearch">permissiongroup/systemsearch</strong>
+						<button class="link_permissiongroup_systemsearch fa fa-copy">复制连接</button>
+					</p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<table class="parameter-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>类型</th>
+								<th>必须</th>
+								<th>默认值</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr >
+								<td>currentPage</td>
+								<td>int</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>当前页码</td>
+							</tr>
+							<tr  class="trb">
+								<td>pageSize</td>
+								<td>int</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>分页大小</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "操作成功",
+	"total": "57",
+	"info": [
+		{
+			"detail_id": "2", //系统参数id
+			"name": "分享增加查询次数",  //参数名
+			"aliasname": "system_share_remaintimes",  //别名
+			"numvalue": "10",  //参数值
+			"bovalue": "1",  //状态 1开启0关闭
+			"bovaluename": "关闭",  //状态名
+			"addtime": "2018-05-08 09:09:45" //添加时间
+		}
+	]
+}
+					</pre>
+					<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy">复制纯净JSON</button></p>
+					<pre class="language-markup" id="purepermissiongroup_systemsearch">
+{
+	"code": "0",
+	"msg": "操作成功",
+	"total": "57",
+	"info": [
+		{
+			"detail_id": "2",
+			"name": "分享增加查询次数",
+			"aliasname": "system_share_remaintimes",
+			"numvalue": "10",
+			"bovalue": "1",
+			"bovaluename": "关闭",
+			"addtime": "2018-05-08 09:09:45"
+		}
+	]
+}</pre>
+				</div>
+				<h3 id="post-permissiongroup_systemdetail" class="login hover_bg_f5 active">POST - 系统参数明细 - permissiongroup/systemdetail</h3>
+				<div id="login_post">
+				<p><strong id="link_permissiongroup_systemdetail">permissiongroup/systemdetail</strong>  <button class="link_permissiongroup_systemdetail fa fa-copy">复制连接</button></p>
+				<p class="desc">和车贷在线一致，未做改变</p>
+				<p><strong>输入参数</strong></p>
+				<table class="parameter-table">
+					<thead>
+						<tr>
+							<th>参数</th>
+							<th>类型</th>
+							<th>必须</th>
+							<th>默认值</th>
+							<th>描述</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr >
+							<td>detai_id</td>
+							<td>int</td>
+							<td><font color="red">是</font></td>
+							<td></td>
+							<td>系统参数id</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><strong>返回值</strong></p>
+				<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "操作成功",
+	"info": {
+		"detail_id": "2", //系统参数id
+		"name": "分享增加查询次数",  //参数名
+		"aliasname": "system_share_remaintimes",  //别名
+		"numvalue": "10",  //参数值
+		"bovalue": "1",  //状态 1开启0关闭
+		"bovaluename": "关闭",  //状态名
+		"type": "3", //参数值类型
+		"type_name": "布尔加数字" //参数值类型名
+	}
+}
+				</pre>
+				<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy">复制纯净JSON</button></p>
+				<pre class="language-markup" id="purepermissiongroup_systemdetail">
+{
+	"code": "0",
+	"msg": "操作成功",
+	"info": {
+		"detail_id": "2",
+		"name": "分享增加查询次数",
+		"aliasname": "system_share_remaintimes",
+		"numvalue": "10",
+		"bovalue": "1",
+		"bovaluename": "关闭",
+		"type": "3",
+		"type_name": "布尔加数字"
+	}
+}</pre>
+				</div>
+				<h3 id="post-permissiongroup_systemnewrec" class="login hover_bg_f5 active">POST - 系统参数新增 - permissiongroup/systemnewrec</h3>
+				<div id="login_post">
+					<p><strong id="link_permissiongroup_systemnewrec">permissiongroup/systemnewrec</strong>  <button class="link_permissiongroup_systemnewrec fa fa-copy">复制连接</button></p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<table class="parameter-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>类型</th>
+								<th>必须</th>
+								<th>默认值</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr >
+								<td>name</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>系统参数名称</td>
+							</tr>
+							<tr  class="trb">
+								<td>aliasname</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>系统参数别名</td>
+							</tr>
+							<tr >
+								<td>type</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>参数类别</td>
+							</tr>
+							<tr  class="trb">
+								<td>bovalue</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>状态</td>
+							</tr>
+							<tr >
+								<td>numvalue</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>参数值</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "操作成功",
+}</pre>
+					<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy">复制纯净JSON</button></p>
+					<pre class="language-markup" id="purepermissiongroup_systemnewrec">
+{
+	"code": "0",
+	"msg": "操作成功",
+}</pre>
+				</div>
+				<h3 id="post-permissiongroup_systemmodify" class="login hover_bg_f5 active">POST - 系统参数修改 - permissiongroup/systemmodify</h3>
+				<div id="login_post">
+					<p><strong id="link_permissiongroup_systemmodify">permissiongroup/systemmodify</strong>  <button class="link_permissiongroup_systemmodify fa fa-copy">复制连接</button></p>
+					<p class="desc">和车贷在线一致，未做改变</p>
+					<p><strong>输入参数</strong></p>
+					<table class="parameter-table">
+						<thead>
+							<tr>
+								<th>参数</th>
+								<th>类型</th>
+								<th>必须</th>
+								<th>默认值</th>
+								<th>描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr >
+								<td>detai_id</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>系统参数id</td>
+							</tr>
+							<tr  class="trb">
+								<td>name</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>系统参数名称</td>
+							</tr>
+							<tr >
+								<td>type</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>参数类别</td>
+							</tr>
+							<tr  class="trb">
+								<td>bovalue</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>状态</td>
+							</tr>
+							<tr >
+								<td>numvalue</td>
+								<td>string</td>
+								<td><font color="red">是</font></td>
+								<td></td>
+								<td>参数值</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><strong>返回值</strong></p>
+					<pre class="language-markup">
+{
+	"code": "0",
+	"msg": "操作成功",
+}</pre>
+					<p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy"> 复制纯净JSON</button></p>
+					<pre class="language-markup" id="purepermissiongroup_systemmodify">
+{
+	"code": "0",
+	"msg": "操作成功",
+}</pre>
+				</div>
+			</div>
+		</div>
+		<!-- 目录 -->
+		<ul class="content_box">
+			<li>
+				<a id="title-0" class="active">基础接口</a>
+				<ul>
+					<li><a id="post-manager_login" class="active">登录</a></li>
+					<li><a id="post-manager_logout">登出</a></li>
+					<li><a id="post-manager_editpwd">员工修改密码</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-1">系统参数</a>
+				<ul>
+					<li><a id="post-permissiongroup_systemsearch">系统参数列表</a></li>
+					<li><a id="post-permissiongroup_systemdetail">系统参数明细</a></li>
+					<li><a id="post-permissiongroup_systemnewrec">系统参数新增</a></li>
+					<li><a id="post-permissiongroup_systemmodify">系统参数修改</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-2">后台用户</a>
+				<ul>
+					<li><a id="post-permissiongroup_users">后台用户列表</a></li>
+					<li><a id="post-permissiongroup_adduser">后台用户增加</a></li>
+					<li><a id="post-permissiongroup_eduser">后台用户修改</a></li>
+					<li><a id="post-permissiongroup_userdetail">后台用户详情</a></li>
+					<li><a id="post-permissiongroup_deluser">删除后台用户详情</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-3">权限</a>
+				<ul>
+					<li><a id="post-permissiongroup_newrec">新增权限组</a></li>
+					<li><a id="post-permissiongroup_modify">修改权限组</a></li>
+					<li><a id="post-permissiongroup_search">权限组列表</a></li>
+					<li><a id="post-permissiongroup_detail">权限组明细</a></li>
+					<li><a id="post-permissiongroup_delrec">删除权限组</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-4">用户user</a>
+				<ul>
+					<li><a id="post-user_list">用户列表</a></li>
+					<li><a id="post-user_new">新增用户</a></li>
+					<li><a id="post-user_edit">修改用户</a></li>
+					<li><a id="post-user_setpwd">设置用户密码</a></li>
+					<li><a id="post-user_detail">用户详情</a></li>
+					<li><a id="post-user_api">用户授权接口信息</a></li>
+					<li><a id="post-user_setapi">设置用户的API</a></li>
+					<li><a id="post-user_callback">用户回调信息</a></li>
+					<li><a id="post-user_setcallback">设置用户的回调地址</a></li>
+					<li><a id="post-user_recharge">用户充值</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-5">用户账户account</a>
+				<ul>
+					<li><a id="post-account_loglist">用户资金变更记录</a></li>
+					<li><a id="post-account_rechargelist">用户充值记录</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-6">提供接口信息apis</a>
+				<ul>
+					<li><a id="post-apis_list">功能接口列表</a></li>
+					<li><a id="post-apis_new">新增功能接口</a></li>
+					<li><a id="post-apis_detail">功能接口详情</a></li>
+					<li><a id="post-apis_edit">修改功能接口</a></li>
+					<li><a id="post-apis_del">删除接口</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-7">车品牌信息car</a>
+				<ul>
+					<li><a id="post-car_branchsearch">车品牌列表</a></li>
+					<li><a id="post-car_branchmodify">车品牌信息修改</a></li>
+					<li><a id="post-car_branchdetail">品牌明细</a></li>
+					<li><a id="post-car_carmodelsearch">车型列表</a></li>
+					<li><a id="post-car_carmodeldetail">车型详情查询</a></li>
+					<li><a id="post-car_carmodelmodify">车型型号修改</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-8">定时定制任务schedule</a>
+				<ul>
+					<li><a id="post-schedule_list">任务列表</a></li>
+					<li><a id="post-schedule_new">新增任务</a></li>
+					<li><a id="post-schedule_edit">修改用户</a></li>
+					<li><a id="post-schedule_detail">修改任务</a></li>
+					<li><a id="post-schedule_del">删除任务</a></li>
+					<li><a id="post-schedule_import">导入任务数据</a></li>
+					<li><a id="post-schedule_datas">任务数据列表</a></li>
+					<li><a id="post-schedule_datadetail">某条数据的详情</a></li>
+					<li><a id="post-schedule_datadel">删除任务的某条数据</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-9">查询记录search</a>
+				<ul>
+					<li><a id="post-search_policy">维保查询列表</a></li>
+					<li><a id="post-search_policydetail">维保详情</a></li>
+					<li><a id="post-search_policycallback">维保回调</a></li>
+					<li><a id="post-search_illegal">违章查询</a></li>
+					<li><a id="post-search_illegaldetail">违章详情</a></li>
+					<li><a id="post-search_valuation">估价列表</a></li>
+					<li><a id="post-search_valuationdetail">估价详情</a></li>
+					<li><a id="post-search_ocr">ocr列表</a></li>
+					<li><a id="post-search_ocrdetail">ocr详情</a></li>
+					<li><a id="post-search_credit">个人信用</a></li>
+					<li><a id="post-search_creditdetail">个人信用详情</a></li>
+					<li><a id="post-search_taobao">淘宝列表</a></li>
+					<li><a id="post-search_taobaodetail">淘宝详情</a></li>
+					<li><a id="post-search_jingdong">京东列表</a></li>
+					<li><a id="post-search_jingdongdetail">京东详情</a></li>
+					<li><a id="post-search_security">社保列表</a></li>
+					<li><a id="post-search_securitydetail">社保详情</a></li>
+					<li><a id="post-search_carrie">运营商列表</a></li>
+					<li><a id="post-search_carriedetail">运营商详情</a></li>
+					<li><a id="post-search_sesame">芝麻分列表</a></li>
+					<li><a id="post-search_sesamedetail">芝麻分详情</a></li>
+				</ul>
+			</li>
+			<li>
+				<a id="title-10">系统设置sysset</a>
+				<ul>
+					<li><a id="post-sysset_upimg">上传图片</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!-- 提示框 -->
+		<div class="showpanel">
+			<p><i class="fa fa-info-circle"></i>您的信息已复制</p>
+		</div>
+	</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@import url(./reset.css);
+@import url(./wiki.css);
+.navbar {
+  position: fixed;
+  width: 250px; }
+  .navbar > i {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 15px; }
+    .navbar > i:last-child {
+      margin-left: 10px; }
+
+.showpanel {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: none;
+  top: 100px;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #9cda6e; }
+  .showpanel.active {
+    display: block;
+    -webkit-animation: showpanel 1s 1;
+    animation: showpanel 1s 1; }
+  .showpanel > p {
+    letter-spacing: 1px; }
+    .showpanel > p > i {
+      margin-right: 5px; }
+
+@-webkit-keyframes showpanel {
+  0% {
+    opacity: 0;
+    top: 0px; }
+  100% {
+    opacity: 1;
+    top: 100px; } }
+
+@keyframes showpanel {
+  0% {
+    opacity: 0;
+    top: 0px; }
+  100% {
+    opacity: 1;
+    top: 100px; } }
+
+.content {
+  margin-top: 70px;
+  margin-left: 270px;
+  width: 930px; }
+  .content > h1 {
+    font-size: 24px;
+    letter-spacing: 2px; }
+    .content > h1:before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 24px;
+      background-color: #0088cc;
+      vertical-align: -3px;
+      margin-right: 5px; }
+  .content > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    border: 1px dashed #0088cc;
+    border-radius: 3px;
+    padding: 10px; }
+    .content > h2 > span {
+      width: 10px;
+      height: 10px; }
+  .content > div#staff_msg > h3 {
+    font-size: 18px;
+    margin-top: 40px;
+    color: #000; }
+    .content > div#staff_msg > h3.active:before {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    .content > div#staff_msg > h3:before {
+      content: '';
+      display: inline-block;
+      color: transparent;
+      border-left-color: #0088cc;
+      border-width: 7px;
+      border-style: solid;
+      width: 0px;
+      height: 0px;
+      -webkit-transition: all 0.25s;
+      transition: all 0.25s;
+      -webkit-transform-origin: 20% 50%;
+      transform-origin: 20% 50%; }
+  .content > div#staff_msg > div#login_post, .content > div#staff_msg #login_post, .content > div#staff_msg #quit_post, .content > div#staff_msg #freeze_post, .content > div#staff_msg #dele_get, .content > div#staff_msg #add_post, .content > div#staff_msg #change_post {
+    margin-bottom: 10px; }
+    .content > div#staff_msg > div#login_post:before, .content > div#staff_msg #login_post:before, .content > div#staff_msg #quit_post:before, .content > div#staff_msg #freeze_post:before, .content > div#staff_msg #dele_get:before, .content > div#staff_msg #add_post:before, .content > div#staff_msg #change_post:before {
+      content: '';
+      display: table; }
+    .content > div#staff_msg > div#login_post > p:first-child > strong, .content > div#staff_msg #login_post > p:first-child > strong, .content > div#staff_msg #quit_post > p:first-child > strong, .content > div#staff_msg #freeze_post > p:first-child > strong, .content > div#staff_msg #dele_get > p:first-child > strong, .content > div#staff_msg #add_post > p:first-child > strong, .content > div#staff_msg #change_post > p:first-child > strong {
+      padding: 6px 8px;
+      background-color: #999;
+      border-radius: 3px;
+      color: #fff;
+      display: inline-block; }
+    .content > div#staff_msg > div#login_post > p:first-child > button, .content > div#staff_msg #login_post > p:first-child > button, .content > div#staff_msg #quit_post > p:first-child > button, .content > div#staff_msg #freeze_post > p:first-child > button, .content > div#staff_msg #dele_get > p:first-child > button, .content > div#staff_msg #add_post > p:first-child > button, .content > div#staff_msg #change_post > p:first-child > button {
+      cursor: pointer;
+      margin-left: 10px; }
+    .content > div#staff_msg > div#login_post > p.desc, .content > div#staff_msg #login_post > p.desc, .content > div#staff_msg #quit_post > p.desc, .content > div#staff_msg #freeze_post > p.desc, .content > div#staff_msg #dele_get > p.desc, .content > div#staff_msg #add_post > p.desc, .content > div#staff_msg #change_post > p.desc {
+      padding: 5px 0;
+      color: #909090; }
+      .content > div#staff_msg > div#login_post > p.desc:before, .content > div#staff_msg #login_post > p.desc:before, .content > div#staff_msg #quit_post > p.desc:before, .content > div#staff_msg #freeze_post > p.desc:before, .content > div#staff_msg #dele_get > p.desc:before, .content > div#staff_msg #add_post > p.desc:before, .content > div#staff_msg #change_post > p.desc:before {
+        content: '描述：';
+        display: inline-block; }
+    .content > div#staff_msg > div#login_post > p:nth-of-type(5), .content > div#staff_msg #login_post > p:nth-of-type(5), .content > div#staff_msg #quit_post > p:nth-of-type(5), .content > div#staff_msg #freeze_post > p:nth-of-type(5), .content > div#staff_msg #dele_get > p:nth-of-type(5), .content > div#staff_msg #add_post > p:nth-of-type(5), .content > div#staff_msg #change_post > p:nth-of-type(5) {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .content > div#staff_msg > div#login_post > p:nth-of-type(5) > strong, .content > div#staff_msg #login_post > p:nth-of-type(5) > strong, .content > div#staff_msg #quit_post > p:nth-of-type(5) > strong, .content > div#staff_msg #freeze_post > p:nth-of-type(5) > strong, .content > div#staff_msg #dele_get > p:nth-of-type(5) > strong, .content > div#staff_msg #add_post > p:nth-of-type(5) > strong, .content > div#staff_msg #change_post > p:nth-of-type(5) > strong {
+        cursor: pointer; }
+      .content > div#staff_msg > div#login_post > p:nth-of-type(5) > button, .content > div#staff_msg #login_post > p:nth-of-type(5) > button, .content > div#staff_msg #quit_post > p:nth-of-type(5) > button, .content > div#staff_msg #freeze_post > p:nth-of-type(5) > button, .content > div#staff_msg #dele_get > p:nth-of-type(5) > button, .content > div#staff_msg #add_post > p:nth-of-type(5) > button, .content > div#staff_msg #change_post > p:nth-of-type(5) > button {
+        cursor: pointer;
+        margin-left: 10px; }
+      .content > div#staff_msg > div#login_post > p:nth-of-type(5) + pre, .content > div#staff_msg #login_post > p:nth-of-type(5) + pre, .content > div#staff_msg #quit_post > p:nth-of-type(5) + pre, .content > div#staff_msg #freeze_post > p:nth-of-type(5) + pre, .content > div#staff_msg #dele_get > p:nth-of-type(5) + pre, .content > div#staff_msg #add_post > p:nth-of-type(5) + pre, .content > div#staff_msg #change_post > p:nth-of-type(5) + pre {
+        display: none; }
+    .content > div#staff_msg > div#login_post > table.parameter-table, .content > div#staff_msg #login_post > table.parameter-table, .content > div#staff_msg #quit_post > table.parameter-table, .content > div#staff_msg #freeze_post > table.parameter-table, .content > div#staff_msg #dele_get > table.parameter-table, .content > div#staff_msg #add_post > table.parameter-table, .content > div#staff_msg #change_post > table.parameter-table {
+      width: 100%; }
+      .content > div#staff_msg > div#login_post > table.parameter-table tr:nth-child(even), .content > div#staff_msg #login_post > table.parameter-table tr:nth-child(even), .content > div#staff_msg #quit_post > table.parameter-table tr:nth-child(even), .content > div#staff_msg #freeze_post > table.parameter-table tr:nth-child(even), .content > div#staff_msg #dele_get > table.parameter-table tr:nth-child(even), .content > div#staff_msg #add_post > table.parameter-table tr:nth-child(even), .content > div#staff_msg #change_post > table.parameter-table tr:nth-child(even) {
+        background-color: #f8f8f8; }
+      .content > div#staff_msg > div#login_post > table.parameter-table th, .content > div#staff_msg #login_post > table.parameter-table th, .content > div#staff_msg #quit_post > table.parameter-table th, .content > div#staff_msg #freeze_post > table.parameter-table th, .content > div#staff_msg #dele_get > table.parameter-table th, .content > div#staff_msg #add_post > table.parameter-table th, .content > div#staff_msg #change_post > table.parameter-table th {
+        text-align: center;
+        background-color: #f7f7f7; }
+
+.content_box {
+  position: fixed;
+  top: 50px;
+  width: 250px;
+  padding: 20px 0;
+  background-color: #dedede;
+  height: calc( 100% - 50px);
+  overflow: auto; }
+  .content_box > li {
+    min-height: 40px;
+    line-height: 40px; }
+    .content_box > li a {
+      padding-left: 40px;
+      width: 100%;
+      display: inline-block;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      position: relative;
+      z-index: 3;
+      cursor: pointer; }
+      .content_box > li a:hover {
+        background-color: #909090;
+        color: #fff; }
+      .content_box > li a.active {
+        color: #fff;
+        background-color: #0088cc;
+        cursor: pointer; }
+        .content_box > li a.active + ul {
+          display: block !important; }
+      .content_box > li a + ul {
+        display: none; }
+    .content_box > li > ul > li {
+      color: #000;
+      background-color: #fbfbfb; }
+      .content_box > li > ul > li > a.active {
+        background-color: #909090;
+        color: #fff; }
