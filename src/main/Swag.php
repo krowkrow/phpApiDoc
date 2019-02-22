@@ -234,8 +234,9 @@ class Swag
     public function run($type = '')
     {
         if (is_dir($this->path)) {
-            foreach ($this->myDir($this->path) as $value) {
-                if ($value) {
+            $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->path));
+            foreach ($files as $value) {
+                if ($value->isFile() and $value->getExtension() == 'php') {
                     $this->getDesInfo($value);
                 }
             }
