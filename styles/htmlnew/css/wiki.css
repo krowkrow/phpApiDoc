@@ -202,43 +202,6 @@ footer{
     font-size: 16px;
     line-height: 8em;
 }
-/* 目录 */
-/* .content_box{
-	position: fixed;
-	top: 110px;
-	left: 30px;
-	border-radius: 3px;
-	padding: 1em 1em;
-	border: 1px solid #ccc;
-	background-color: #f7f7f7;
+red {
+    color: #ff0000;
 }
-
-.content_title{
-	padding-bottom: .5em;
-    margin-bottom: .5em;
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-}
-
-.content_box a{
-	color: #4078c0;
-	font-size: 16px;
-	line-height: 1.6;
-	cursor: pointer;
-}
-
-.content_box a:hover{
-	text-decoration: underline;
-}
-.content_box ul{
-	margin-left: 23px;
-}
-.content_box ul.menu{
-	display:none;
-}
-.content table tr.trb {
-    background-color: #efefef;
-}
-p.desc {
-	text-indent: 2em;
-} */
