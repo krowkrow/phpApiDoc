@@ -120,7 +120,7 @@ EOL;
             }
             $this->outParamFooter();
         } else {
-            echo '<p class="desc">无</p>';
+            echo '<p class="desc">无参数</p>';
         }
 
         $this->outResponse($arrApi['return'], $id);
@@ -142,11 +142,9 @@ EOL;
         echo <<<EOL
 
 			<p><strong>返回</strong></p>
-			<pre class="language-markup">
-{$strJosn['src']}</pre>
+			<pre class="language-markup">{$strJosn['src']}</pre>
             <p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy"> 复制纯净JSON</button></p>
-            <pre class="language-markup" id="pure{$id}">
-{$strJosn['new']}</pre>
+            <pre class="language-markup" id="pure{$id}">{$strJosn['new']}</pre>
 
 EOL;
     }

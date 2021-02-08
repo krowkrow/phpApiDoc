@@ -320,6 +320,7 @@ class Swag
         $new_arr = [];
         $ind = 0;
         foreach ($list as $line) {
+            if (!isset($new_arr[$ind])) $new_arr[$ind] = '';
             $line = trim($line);
             if (empty($line)) {
                 $new_arr[$ind] .= $line . PHP_EOL;
@@ -351,7 +352,7 @@ class Swag
             $cur_key = '';
             $cur_arr = explode(' ', $cur_val, 2);
             $cur_arr = array_filter($cur_arr);
-            if (! $cur_arr[0]) {
+            if (empty($cur_arr)) {
                 continue;
             }
             $cur_key = trim($cur_arr[0]);
