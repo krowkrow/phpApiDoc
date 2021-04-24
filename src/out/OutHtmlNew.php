@@ -142,9 +142,10 @@ EOL;
         echo <<<EOL
 
 			<p><strong>返回</strong></p>
-			<pre class="language-markup">{$strJosn['src']}</pre>
+			<p></p>
+            <pre class="language-markup" style="display:block;">{$strJosn['src']}</pre>
             <p class="appJson"><strong>展开纯净json</strong><button class="puremanager_editpwd fa fa-copy"> 复制纯净JSON</button></p>
-            <pre class="language-markup" id="pure{$id}">{$strJosn['new']}</pre>
+            <pre class="language-markup" style="display:none;" id="pure{$id}">{$strJosn['new']}</pre>
 
 EOL;
     }
