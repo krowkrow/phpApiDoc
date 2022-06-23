@@ -20,7 +20,7 @@ if (!isset($argv[1])||empty($argv[1])) {
 $path_dest=isset($argv[3]) ? trim($argv[3]) : date('YmdHis');
 $path_source=trim($argv[1]);
 
-function __autoload($classname) {
+spl_autoload_register(function ($classname) {
     $classname = str_replace('\\', '/', $classname);
     $file = sprintf('%s/src/%s.php', __DIR__, $classname);
     if (file_exists($file)) {
@@ -28,7 +28,7 @@ function __autoload($classname) {
     } else {
         exit('not find file '.$file);
     }
-}
+});
 
 $swig=new main\Swag($path_source, $path_dest);
 $data = $swig->run('html');
